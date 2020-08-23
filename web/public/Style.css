@@ -1,0 +1,20 @@
+ h1 {
+    color: RED;
+    text-align: center;
+  }
+  h2 {
+    color:BLue;
+    text-align: center;
+  }
+  h3 {
+    color: darkred;
+    text-align: left;
+  }
+  p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: brown;
+  }
+  
+
+  
