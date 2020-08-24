@@ -82,6 +82,20 @@ app.get('/api/users/:user/devices', (req, res) => {
             res.send(devices); 
         }); 
     });
+/**
+* @api {post} /api/devices/ Posting Devices
+* @apiName PostDevice
+* @apiGroup Devices
+*
+* @apiParam {String} nameName of Device.
+* @apiParam {String} userName of user.
+* @apiParam {JSON} sensorDatasensor data.
+*
+* @apiSuccessExample Success-Response:
+*HTTP/1.1 200 OK
+* {"Successfully posted devices"}
+*
+*/
 app.post('/api/devices', (req, res) => { 
     const { name, user, sensorData } = req.body; 
     const newDevice = new Device({ 
@@ -95,6 +109,19 @@ app.post('/api/devices', (req, res) => {
         : res.send('successfully added device and data'); 
     }); 
 });
+/**
+* @api {post} /api/authenticating/ Authenticating Devices
+* @apiName Postauthenticate
+* @apiGroup Users
+*
+* @apiParam {String} userName of user.
+* @apiParam {Password} password of user.
+*
+* @apiSuccessExample Success-Response:
+*HTTP/1.1 200 OK
+* {"Successfully authenticated User"}
+*
+*/
 app.post('/api/authenticate', (req, res) => { 
     const { name, password } = req.body; 
     User.findOne({name, password}, (error, user) =>
@@ -110,6 +137,20 @@ app.post('/api/authenticate', (req, res) => {
         }
     });
 });
+/**
+* @api {post} /api/registration/ Registering Users
+* @apiName UserRegistration
+* @apiGroup Registrations
+*
+* @apiParam {String} userName of user.
+* @apiParam {Password} userPassword of user.
+* @apiParam {Boolean} verification check of user.
+*
+* @apiSuccessExample Success-Response:
+*HTTP/1.1 200 OK
+* {"Successfully Registered User"}
+*
+*/
 app.post('/api/registration', (req, res)=> {
     const{ name, password, isBoolean } = req.body;
     User.findOne({ name: name }, (error, username)=> {
