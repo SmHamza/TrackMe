@@ -5,7 +5,8 @@ const express = require('express');
 const app = express(); 
 const bodyParser = require('body-parser'); 
 const port = process.env.PORT || 5000;
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://syHamza:Hamzano123@cluster0.rvk7t.mongodb.net', {useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({ extended: false })) 
 app.use(bodyParser.json())
 app.use(express.static('public'));

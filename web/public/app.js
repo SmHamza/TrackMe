@@ -1,6 +1,6 @@
 $('#navbar').load('navbar.html');
 $('#footer').load('footer.html');
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://api-nu-sage.vercel.app/api';
 //const devices= JSON.parse(localStorage.getItem('devices')) || [];
 //const users= JSON.parse(localStorage.getItem('users')) || [];
 const currentUser = localStorage.getItem('user');
