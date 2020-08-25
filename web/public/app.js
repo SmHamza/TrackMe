@@ -94,7 +94,7 @@ $('#login').on('click', () => {
 $('#send-command').on('click', function() { 
     const command = $('#command').val();
     const deviceId = $('device').val();
-    $.post(`${MQTT_URL}`, { command, deviceId}) 
+    $.post(`${MQTT_URL}`, { deviceId, command}) 
     .then((response) => { 
         if (response.success) {
             $('#message').append(`<p class="alert alert-success">${response.message}</p>`);
