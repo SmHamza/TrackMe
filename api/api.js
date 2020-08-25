@@ -174,9 +174,6 @@ app.post('/api/registration', (req, res)=> {
         }
     })
 });
-app.post('/api/send-command', (req, res) => { 
-    console.log(req.body); 
-});
 app.listen(port, () => { 
     console.log(`listening on port ${port}`); 
 });

@@ -65,7 +65,6 @@ $('#register').on('click', function() {
     //const user_exists = users.find(user => user.user === username);
     if (password == confirmpassword)
     {
-        console.log('ok');
         $.post(`${API_URL}/registration`, { name, password, isBoolean : 1})
         .then((response) => { 
             if (response.success) {
@@ -77,7 +76,6 @@ $('#register').on('click', function() {
             } 
         });
     }
-    
 });
 $('#login').on('click', () => { 
     const user = $('#user').val(); 
