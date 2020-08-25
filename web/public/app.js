@@ -97,7 +97,7 @@ $('#login').on('click', () => {
 $('#send-command').on('click', function() { 
     const command = $('#command').val();
     const deviceId = $('device').val();
-    console.log(`id is: ${id}  command is: ${command}`);
+    //console.log(`id is: ${id}  command is: ${command}`);
     $.post(`$http://localhost:5001/send-command`, { command, deviceId}) 
     .then((response) => { 
         if (response.success) {
