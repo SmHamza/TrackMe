@@ -10,9 +10,9 @@ app.use(bodyParser.urlencoded({
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    res.header ("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
-    res.header ("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-    res.header ("Allow: GET, POST, OPTIONS, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+    res.header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+    res.header("Allow: GET, POST, OPTIONS, PUT, DELETE");
     next();
 });
 const client = mqtt.connect("mqtt://broker.hivemq.com:1883");
