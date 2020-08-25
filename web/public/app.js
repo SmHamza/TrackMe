@@ -97,14 +97,14 @@ $('#login').on('click', () => {
 $('#send-command').on('click', function() { 
     const command = $('#command').val();
     const deviceId = $('device').val();
+    console.log(`id is: ${id}  command is: ${command}`);
     $.post(`$http://localhost:5001/send-command`, { command, deviceId}) 
     .then((response) => { 
         if (response.success) {
-            location.href = '/';
+            $('#message').append(`<p class="alert alert-success">${response.message}</p>`);
         } 
         else {
-            $('#message').append(`<p class="alert alert-danger">${response} 
-        </p>`); 
+            $('#message').append(`<p class="alert alert-danger">${err}</p>`); 
         } 
     console.log(`command is: ${command}`); 
     });
