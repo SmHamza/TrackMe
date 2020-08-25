@@ -1,6 +1,7 @@
 $('#navbar').load('navbar.html');
 $('#footer').load('footer.html');
 const API_URL = 'https://api-nu-sage.vercel.app/api';
+const MQTT_URL = '$http://localhost:5001/send-command';
 //const devices= JSON.parse(localStorage.getItem('devices')) || [];
 //const users= JSON.parse(localStorage.getItem('users')) || [];
 const currentUser = localStorage.getItem('user');
@@ -97,8 +98,7 @@ $('#login').on('click', () => {
 $('#send-command').on('click', function() { 
     const command = $('#command').val();
     const deviceId = $('device').val();
-    //console.log(`id is: ${id}  command is: ${command}`);
-    $.post(`$http://localhost:5001/send-command`, { command, deviceId}) 
+    $.post(`${MQTT_URL}`, { command, deviceId}) 
     .then((response) => { 
         if (response.success) {
             $('#message').append(`<p class="alert alert-success">${response.message}</p>`);
