@@ -2,8 +2,6 @@ $('#navbar').load('navbar.html');
 $('#footer').load('footer.html');
 const API_URL = 'https://api-nu-sage.vercel.app/api';
 const MQTT_URL = 'http://localhost:5001/send-command';
-//const devices= JSON.parse(localStorage.getItem('devices')) || [];
-//const users= JSON.parse(localStorage.getItem('users')) || [];
 const currentUser = localStorage.getItem('user');
 if (currentUser) {
 $.get(`${API_URL}/users/${currentUser}/devices`) 
@@ -62,8 +60,6 @@ $('#register').on('click', function() {
     const name = $('#user').val();
     const password = $('#password').val();
     const confirmpassword = $('#confirm_password').val(); 
-    //const users = JSON.parse(localStorage.getItem('users')) || [];
-    //const user_exists = users.find(user => user.user === username);
     if (password == confirmpassword)
     {
         $.post(`${API_URL}/registration`, { name, password, isBoolean : 1})
