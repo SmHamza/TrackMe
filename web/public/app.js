@@ -95,8 +95,19 @@ $('#login').on('click', () => {
     }); 
 });
 $('#send-command').on('click', function() { 
-    const command = $('#command').val(); 
+    const command = $('#command').val();
+    const deviceId = $('device').val();
+    $.post(`$http://localhost:5001/send-command`, { command, deviceId}) 
+    .then((response) => { 
+        if (response.success) {
+            location.href = '/';
+        } 
+        else {
+            $('#message').append(`<p class="alert alert-danger">${response} 
+        </p>`); 
+        } 
     console.log(`command is: ${command}`); 
+    });
 });
 const logout = () =>
 {
