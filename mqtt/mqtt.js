@@ -14,9 +14,6 @@ app.use((req, res, next) => {
     res.header ("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     res.header ("Allow: GET, POST, OPTIONS, PUT, DELETE");
     $method = $_SERVER ['REQUEST_METHOD'];
-    if ($method == "OPTIONS") {
-        die ();
-    }
     next();
 });
 const client = mqtt.connect("mqtt://broker.hivemq.com:1883");
