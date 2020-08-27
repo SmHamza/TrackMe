@@ -128,10 +128,10 @@ app.post('/api/devices', (req, res) => {
 */
 app.post('/api/authenticate', (req, res) => { 
     const { name, password } = req.body; 
-    User.findOne({name, password}, (error, user) =>
+    User.findOne({name, password}, (error, name) =>
     {
-        if (user == null){
-            return res.json({error: "No such User exists" , user: user});
+        if (name == null){
+            return res.json({error: "No such User exists" , name: name});
         }
         else{
             return res.json({ 
