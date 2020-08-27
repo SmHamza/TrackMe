@@ -126,12 +126,12 @@ app.post('/api/devices', (req, res) => {
 * {"Successfully authenticated User"}
 *
 */
-app.post('/api/authenticate', (req, res) => { 
+/*app.post('/api/authenticate', (req, res) => { 
     const { name, password } = req.body; 
-    User.findOne({name, password}, (error, name) =>
+    User.findOne({name, password}, (error, user) =>
     {
-        if (name == null){
-            return res.json({error: "No such User exists" , name: name});
+        if (user == null){
+            return res.json({error: "No such User exists" , user: user});
         }
         else{
             return res.json({ 
@@ -140,7 +140,7 @@ app.post('/api/authenticate', (req, res) => {
                 isBoolean: user.isBoolean });
         }
     });
-});
+});*/
 /**
 * @api {post} /api/registration/ Registering Users
 * @apiName UserRegistration
