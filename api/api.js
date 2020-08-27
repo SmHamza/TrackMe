@@ -126,7 +126,7 @@ app.post('/api/devices', (req, res) => {
 * {"Successfully authenticated User"}
 *
 */
-/*app.post('/api/authenticate', (req, res) => { 
+app.post('/api/authenticate', (req, res) => { 
     const { name, password } = req.body; 
     User.findOne({name, password}, (error, user) =>
     {
@@ -140,7 +140,7 @@ app.post('/api/devices', (req, res) => {
                 isBoolean: user.isBoolean });
         }
     });
-});*/
+});
 /**
 * @api {post} /api/registration/ Registering Users
 * @apiName UserRegistration
