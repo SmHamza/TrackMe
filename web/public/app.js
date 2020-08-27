@@ -75,18 +75,18 @@ $('#register').on('click', function() {
     }
 });
 $('#login').on('click', () => { 
-    const user = $('#user').val(); 
+    const name = $('#user').val(); 
     const password = $('#password').val(); 
-    $.post(`${API_URL}/authenticate`, { user, password }) 
+    $.post(`${API_URL}/authenticate`, { name, password }) 
     .then((response) => { 
         if (response.success) {
-            localStorage.setItem('user', user); 
+            localStorage.setItem('user', name); 
             localStorage.setItem('isAdmin', response.isBoolean); 
             localStorage.setItem('isAuthenticated', true); 
             location.href = '/';
         } 
         else {
-            $('#message').append(`<p class="alert alert-danger">${response} 
+            $('#message').append(`<p class="alert alert-danger">${response.error} 
         </p>`); 
         } 
     }); 
