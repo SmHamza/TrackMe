@@ -27,6 +27,18 @@ client.on('connect', () => {
     console.log('mqtt connected');
     client.subscribe('/sensorData');
 });
+/**
+ * @api {post} /send-command Sends a message from web
+ * @apiGroup Send-Command
+ * @apiSuccessExample {json} Success-Response:
+* {
+    *'Command sent'
+* }
+* @apiErrorExample {json} Error-Response:
+* {
+    *'Command not sent'
+* }
+*/
 app.post('/send-command', (req, res) => {
     const { deviceId, command } = req.body;
     const topic = `/218547808/command/${deviceId}`;
@@ -41,6 +53,7 @@ client.on('message', (topic, message) => {
             if (err) {
                 console.log(err)
             }
+            console.log("Messege received");
             const { sensorData } = device;
             const { ts, loc, temp } = data;
             sensorData.push({ ts, loc, temp });
@@ -53,6 +66,18 @@ client.on('message', (topic, message) => {
         });
     }
 });
+/**
+* @api {put} /sensor-data Creates random sensor data
+* @apiGroup Sensor Data
+* @apiSuccessExample {json} Success-Response:
+* {
+    *'published new message'
+* }
+* @apiErrorExample {json} Error-Response:
+* {
+    *'message not published'
+* }
+*/
 app.put('/sensor-data', (req, res) => {
     const { deviceId } = req.body;
     const [lat, lon] = randomCoordinates().split(", ");

@@ -5,12 +5,14 @@
   "main": "mqtt.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node mqtt.js"
+    "start": "node mqtt.js",
+    "doc": "apidoc -o public/generated-docs/ -e node_modules/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "doc": "0.0.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.1",

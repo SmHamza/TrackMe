@@ -1,0 +1,7 @@
+{       
+    "name": "TrackMe Mqtt",
+    "version": "1.0.0", 
+    "description": "List of endpoints for the Mqtt", 
+    "title": "TrackMe Mqtt", 
+    "url": "http://localhost:5001"
+}
