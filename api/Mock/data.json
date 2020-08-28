@@ -1,6 +1,21 @@
 {
   "devices": [
     {
+      "id": 1,
+      "name": "Mary's iPhone",
+      "user": "mary123",
+      "sensorData": [
+        {
+          "ts": "1529542743",
+          "temp": 14,
+          "loc": {
+            "lat": 33.812092,
+            "lon": -117.918974
+          }
+        }
+      ]
+    },
+    {
       "id": 0,
       "name": "Alex's iPhone",
       "user": "alex",
@@ -19,21 +34,6 @@
           "loc": {
             "lat": -37.850026,
             "lon": 145.117683
-          }
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "name": "Mary's iPhone",
-      "user": "mary123",
-      "sensorData": [
-        {
-          "ts": "1529542743",
-          "temp": 14,
-          "loc": {
-            "lat": 33.812092,
-            "lon": -117.918974
           }
         }
       ]
